@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ramudit Singh | Java Full Stack Developer</title>
+
+    <meta name="description"
+        content="Ramudit Singh - Java Full Stack Developer, Computer Science and Cyber Security student.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Typed JS -->
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050816;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --primary: #8b5cf6;
+            --secondary: #22d3ee;
+            --dark: #050816;
+            --card: #0d1224;
+            --text-gray: #a7adbe;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .section-title h2 {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 75px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 8%;
+
+            background: rgba(5, 8, 22, 0.85);
+            backdrop-filter: blur(12px);
+
+            z-index: 1000;
+
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #ddd;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        #home {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding-top: 120px;
+
+            background:
+                radial-gradient(circle at 20% 30%, rgba(139,92,246,0.15), transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(34,211,238,0.1), transparent 30%);
+        }
+
+        .hero-content {
+            width: 55%;
+        }
+
+        .hero-content h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        #typed {
+            color: var(--secondary);
+        }
+
+        .hero-content p {
+            color: var(--text-gray);
+            max-width: 650px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+
+        /* Buttons */
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+
+            border-radius: 8px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .primary-btn {
+            background: var(--primary);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(139,92,246,0.3);
+        }
+
+        .secondary-btn {
+            border: 1px solid var(--primary);
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: var(--primary);
+        }
+
+
+        /* Social icons */
+
+        .socials {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .socials a {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #292f45;
+            border-radius: 50%;
+
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+
+        /* Profile image */
+
+        .hero-image {
+            width: 40%;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-wrapper {
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            padding: 8px;
+
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--secondary)
+            );
+
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 7px solid var(--dark);
+        }
+
+        @keyframes float {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-container {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--text-gray);
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .about-info {
+            flex: 1;
+
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 20px;
+        }
+
+        .info-card {
+            background: var(--card);
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            border: 1px solid #1b2239;
+
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .info-card i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .info-card h4 {
+            margin-bottom: 5px;
+        }
+
+        .info-card p {
+            color: var(--text-gray);
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-container {
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 40px;
+        }
+
+        .skill {
+            margin-bottom: 25px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-header span:last-child {
+            color: var(--secondary);
+        }
+
+        .skill-bar {
+            height: 8px;
+
+            background: #1a2035;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+
+            width: 0;
+
+            background: linear-gradient(
+                90deg,
+                var(--primary),
+                var(--secondary)
+            );
+
+            border-radius: 20px;
+
+            transition: width 1.5s ease;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            max-width: 900px;
+            margin: auto;
+
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 0;
+
+            width: 2px;
+
+            height: 100%;
+
+            background: var(--primary);
+        }
+
+        .timeline-item {
+            width: 50%;
+
+            padding: 20px 40px;
+
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            width: 15px;
+            height: 15px;
+
+            background: var(--secondary);
+
+            border-radius: 50%;
+
+            top: 30px;
+
+            right: -7px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -7px;
+        }
+
+        .timeline-content {
+            background: var(--card);
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            border: 1px solid #1b2239;
+
+            transition: 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.03);
+            border-color: var(--primary);
+        }
+
+        .timeline-content h3 {
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content h4 {
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .date {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-container {
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card);
+
+            border: 1px solid #1b2239;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            transition: 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Project Slider Styles */
+        .project-image {
+            position: relative;
+            height: 190px;
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .slider-track img {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(5, 8, 22, 0.7);
+            color: #fff;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            transition: 0.3s;
+            z-index: 2;
+        }
+
+        .slide-btn:hover {
+            background: var(--primary);
+        }
+
+        .slide-btn.prev {
+            left: 8px;
+        }
+
+        .slide-btn.next {
+            right: 8px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tech {
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: rgba(139,92,246,0.15);
+
+            color: #c4b5fd;
+
+            font-size: 0.75rem;
+        }
+
+        .project-links {
+            margin-top: 20px;
+
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-links a {
+            color: var(--secondary);
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-container {
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 25px;
+        }
+
+        .education-card {
+            background: var(--card);
+
+            border: 1px solid #1b2239;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .education-card i {
+            color: var(--primary);
+
+            font-size: 2rem;
+
+            margin-bottom: 15px;
+        }
+
+        .education-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-container {
+            max-width: 800px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: var(--card);
+
+            border: 1px solid #1b2239;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .contact-card i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .contact-card p {
+            color: var(--text-gray);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #02040d;
+
+            padding: 40px 8%;
+
+            text-align: center;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+        }
+
+        footer span {
+            color: var(--primary);
+        }
+
+        footer p {
+            color: var(--text-gray);
+        }
+
+
+        /* =========================
+           SCROLL ANIMATION
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(50px);
+
+            transition: 0.8s;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 900px) {
+
+            nav ul {
+                display: none;
+            }
+
+            #home {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-content,
+            .hero-image {
+                width: 100%;
+            }
+
+            .hero-content {
+                margin-top: 40px;
+            }
+
+            .buttons,
+            .socials {
+                justify-content: center;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .skills-container,
+            .education-container {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-container {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+        }
+
+
+        @media(max-width: 600px) {
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .image-wrapper {
+                width: 260px;
+                height: 260px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .about-info {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                left: 0;
+                text-align: left;
+                padding-left: 40px;
+                padding-right: 0;
+            }
+
+            .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 3px;
+                right: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+    <div class="logo">
+        Ramudit<span>.</span>
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#experience">Experience</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section id="home">
+
+    <div class="hero-content">
+
+        <h4>Hello, I'm</h4>
+
+        <h1>
+            Ramudit <span>Singh</span>
+        </h1>
+
+        <h2>
+            I'm a <span id="typed"></span>
+        </h2>
+
+        <p>
+            Computer Science and Engineering student specializing in
+            Cyber Security, passionate about building scalable and
+            user-friendly applications using Java and modern web
+            technologies.
+        </p>
+
+        <div class="buttons">
+
+            <!-- Change resume.pdf to your actual resume -->
+            <a href="Resume.pdf"
+               class="btn primary-btn"
+               target="_blank">
+
+                <i class="fa-solid fa-file-pdf"></i>
+
+                View Resume
+
+            </a>
+
+
+            <a href="#projects"
+               class="btn secondary-btn">
+
+                <i class="fa-solid fa-code"></i>
+
+                View Projects
+
+            </a>
+
+        </div>
+
+
+        <div class="socials">
+
+            <!-- Replace with your actual links -->
+
+            <a href="https://github.com/Ramudit"
+               target="_blank">
+
+                <i class="fa-brands fa-github"></i>
+
+            </a>
+
+            <a href="https://www.linkedin.com/in/ramudit-singh-934001326/"
+               target="_blank">
+
+                <i class="fa-brands fa-linkedin"></i>
+
+            </a>
+
+            <a href="ramuditsingh4073@gmail.com">
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <div class="image-wrapper">
+
+            <!-- [ADD HERO PROFILE IMAGE HERE] -->
+            <img src="profile.png"
+                 alt="Ramudit Singh">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about" class="reveal">
+
+    <div class="section-title">
+
+        <h2>About <span>Me</span></h2>
+
+        <p>Get to know me</p>
+
+    </div>
+
+
+    <div class="about-container">
+
+        <div class="about-text">
+
+            <h3>Java Full Stack Developer</h3>
+
+            <p>
+
+                I am a Computer Science and Engineering student
+                specializing in Cyber Security with a strong interest
+                in software development and problem solving.
+
+            </p>
+
+            <p>
+
+                My primary career goal is to become a Java Full Stack
+                Developer. I enjoy working with Java, object-oriented
+                programming, databases and web technologies while
+                continuously improving my Data Structures and
+                Algorithms skills.
+
+            </p>
+
+            <p>
+
+                My cybersecurity background also helps me understand
+                the importance of secure application development,
+                authentication and protecting user data.
+
+            </p>
+
+        </div>
+
+
+        <div class="about-info">
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-code"></i>
+
+                <h4>Primary Focus</h4>
+
+                <p>Java Full Stack Development</p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <h4>Specialization</h4>
+
+                <p>Cyber Security</p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-database"></i>
+
+                <h4>Backend</h4>
+
+                <p>Java, SQL & APIs</p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+                <h4>Problem Solving</h4>
+
+                <p>DSA & OOP</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills" class="reveal">
+
+    <div class="section-title">
+
+        <h2>My <span>Skills</span></h2>
+
+        <p>Technologies I am working with</p>
+
+    </div>
+
+
+    <div class="skills-container">
+
+
+        <div>
+
+            <div class="skill">
+
+                <div class="skill-header">
+
+                    <span>Java</span>
+
+                    <span>85%</span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div class="skill-progress"
+                         data-width="85%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+
+                    <span>HTML & CSS</span>
+
+                    <span>85%</span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div class="skill-progress"
+                         data-width="85%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+
+                    <span>JavaScript</span>
+
+                    <span>70%</span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div class="skill-progress"
+                         data-width="70%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+
+                    <span>SQL / Database</span>
+
+                    <span>75%</span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div class="skill-progress"
+                         data-width="75%">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="skill">
+
+                <div class="skill-header">
+
+                    <span>OOP</span>
+
+                    <span>85%</span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div class="skill-progress"
+                         data-width="85%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+
+                    <span>Data Structures</span>
+
+                    <span>75%</span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div class="skill-progress"
+                         data-width="75%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+
+                    <span>Linux</span>
+
+                    <span>60%</span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div class="skill-progress"
+                         data-width="60%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+
+                    <span>Cyber Security</span>
+
+                    <span>65%</span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div class="skill-progress"
+                         data-width="65%">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience" class="reveal">
+
+    <div class="section-title">
+
+        <h2>Work <span>Experience</span></h2>
+
+        <p>My professional journey</p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <div class="date">
+                    1 Year Apprenticeship
+                </div>
+
+                <h3>Apprentice</h3>
+
+                <h4>Eastern Coalfields Limited</h4>
+
+                <p>
+
+                    Worked in a professional organization and gained
+                    practical experience with enterprise software,
+                    computer-related support and office technologies.
+
+                    Worked with SAP, HMS and Microsoft Office tools
+                    while assisting with computer-related issues.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <div class="date">
+                    Present
+                </div>
+
+                <h3>B.Tech Student</h3>
+
+                <h4>Computer Science & Engineering</h4>
+
+                <p>
+
+                    Currently pursuing B.Tech with specialization
+                    in Cyber Security while developing skills in
+                    Java, web development, databases, DSA and
+                    software engineering.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects" class="reveal">
+
+    <div class="section-title">
+        <h2>Featured <span>Projects</span></h2>
+        <p>Things I have built</p>
+    </div>
+
+    <div class="projects-container">
+
+        <!-- =========================
+             PROJECT 1: VulnScan
+        ========================= -->
+        <div class="project-card">
+            <div class="project-image">
+                <button class="slide-btn prev" onclick="moveSlide(this, -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                
+                <div class="slider-track">
+                    <!-- ============================================== -->
+                    <!-- [ADD/EDIT PROJECT 1 IMAGES HERE]               -->
+                    <!-- You can add more <img> tags below as needed    -->
+                    <!-- ============================================== -->
+                    <img src="vulnscan1.png" alt="VulnScan Network Vulnerability Scanner - Slide 1">
+                    <img src="vulnscan2.png" alt="VulnScan Network Vulnerability Scanner - Slide 2">
+                    <img src="vulnscan3.png" alt="VulnScan Network Vulnerability Scanner - Slide 3">
+                    <!-- ============================================== -->
+                </div>
+
+                <button class="slide-btn next" onclick="moveSlide(this, 1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="project-content">
+                <h3>VulnScan - Vulnerability Scanner</h3>
+                <p>
+                    A multi-threaded network security tool developed in Java to scan open ports, identify active network services, detect misconfigurations, and generate structured vulnerability risk reports.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech">Java</span>
+                    <span class="tech">Multi-threading</span>
+                    <span class="tech">Socket Programming</span>
+                    <span class="tech">Cyber Security</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Ramudit/vulnscan" target="_blank">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================
+             PROJECT 2: Developer Portfolio
+        ========================= -->
+        <div class="project-card">
+            <div class="project-image">
+                <button class="slide-btn prev" onclick="moveSlide(this, -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                
+                <div class="slider-track">
+                    <!-- ============================================== -->
+                    <!-- [ADD/EDIT PROJECT 2 IMAGES HERE]               -->
+                    <!-- You can add more <img> tags below as needed    -->
+                    <!-- ============================================== -->
+                    <img src="portfolio.png" alt="Developer Portfolio Website - Slide 1">
+                    <!-- ============================================== -->
+                </div>
+
+                <button class="slide-btn next" onclick="moveSlide(this, 1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="project-content">
+                <h3>Interactive Developer Portfolio</h3>
+                <p>
+                    A modern, responsive personal portfolio website featuring custom glassmorphism styling, dynamic typing effects via Typed.js, smooth scroll animations, and interactive skill progress indicators.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech">HTML5</span>
+                    <span class="tech">CSS3</span>
+                    <span class="tech">JavaScript</span>
+                    <span class="tech">Typed.js</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Ramudit/portfolio" target="_blank">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================
+             PROJECT 3: IT Helpdesk
+        ========================= -->
+        <div class="project-card">
+            <div class="project-image">
+                <button class="slide-btn prev" onclick="moveSlide(this, -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                
+                <div class="slider-track">
+                    <!-- ============================================== -->
+                    <!-- [ADD/EDIT PROJECT 3 IMAGES HERE]               -->
+                    <!-- You can add more <img> tags below as needed    -->
+                    <!-- ============================================== -->
+                    <img src="helpdesk1.png" alt="IT Helpdesk Ticketing System - Slide 1">
+                    <img src="helpdesk2.png" alt="IT Helpdesk Ticketing System - Slide 2">
+                    <img src="helpdesk3.png" alt="IT Helpdesk Ticketing System - Slide 3">
+                    <img src="helpdesk4.png" alt="IT Helpdesk Ticketing System - Slide 4">
+                    <img src="helpdesk5.png" alt="IT Helpdesk Ticketing System - Slide 5">
+                    <img src="helpdesk6.png" alt="IT Helpdesk Ticketing System - Slide 6">
+                    <!-- ============================================== -->
+                </div>
+
+                <button class="slide-btn next" onclick="moveSlide(this, 1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="project-content">
+                <h3>IT Helpdesk Ticketing System</h3>
+                <p>
+                    A core Java application integrated with a relational database to log IT incidents, track ticket resolution lifecycles, manage staff roles, and generate support reports.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech">Java</span>
+                    <span class="tech">JDBC</span>
+                    <span class="tech">MySQL</span>
+                    <span class="tech">OOP</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Ramudit/it-helpdesk" target="_blank">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education" class="reveal">
+
+    <div class="section-title">
+
+        <h2>My <span>Education</span></h2>
+
+        <p>Academic background</p>
+
+    </div>
+
+
+    <div class="education-container">
+
+
+        <div class="education-card">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <h3>B.Tech - Computer Science & Engineering</h3>
+
+            <p>
+
+                Specialization: Cyber Security
+
+            </p>
+
+            <p>
+
+                Currently pursuing Bachelor's degree.
+
+            </p>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <i class="fa-solid fa-laptop"></i>
+
+            <h3>Diploma in Computer Engineering</h3>
+
+            <p>
+
+                Studied programming, data structures,
+                object-oriented programming, operating systems
+                and computer networks.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="reveal">
+
+    <div class="section-title">
+
+        <h2>Contact <span>Me</span></h2>
+
+        <p>Let's connect</p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <a href="mailto:ramuditsingh4073@gmail.com"
+           class="contact-card">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <div>
+
+                <h4>Email</h4>
+
+                <p>ramuditsingh4073@gmail.com</p>
+
+            </div>
+
+        </a>
+
+
+        <a href="https://www.linkedin.com/in/ramudit-singh-934001326/"
+           target="_blank"
+           class="contact-card">
+
+            <i class="fa-brands fa-linkedin"></i>
+
+            <div>
+
+                <h4>LinkedIn</h4>
+
+                <p>Connect with me</p>
+
+            </div>
+
+        </a>
+
+
+        <a href="https://github.com/Ramudit"
+           target="_blank"
+           class="contact-card">
+
+            <i class="fa-brands fa-github"></i>
+
+            <div>
+
+                <h4>GitHub</h4>
+
+                <p>View my projects</p>
+
+            </div>
+
+        </a>
+
+
+        <div class="contact-card">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <div>
+
+                <h4>Location</h4>
+
+                <p>India</p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h3>
+        Ramudit<span>.</span>
+    </h3>
+
+    <p>
+        Java Full Stack Developer | Cyber Security Enthusiast
+    </p>
+
+    <p style="margin-top:15px;">
+        © 2026 Ramudit Singh. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* =========================
+       TYPED TEXT
+    ========================= */
+
+    new Typed('#typed', {
+
+        strings: [
+
+            'Java Full Stack Developer',
+            'Java Developer',
+            'Web Developer',
+            'Cyber Security Enthusiast'
+
+        ],
+
+        typeSpeed: 60,
+
+        backSpeed: 40,
+
+        backDelay: 1500,
+
+        loop: true
+
+    });
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+
+        reveals.forEach(element => {
+
+            const windowHeight = window.innerHeight;
+
+            const elementTop =
+                element.getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - 100) {
+
+                element.classList.add('active');
+
+            }
+
+        });
+
+    }
+
+    window.addEventListener(
+        'scroll',
+        revealOnScroll
+    );
+
+    revealOnScroll();
+
+
+    /* =========================
+       SKILL BAR ANIMATION
+    ========================= */
+
+    const skillBars =
+        document.querySelectorAll('.skill-progress');
+
+    const skillsSection =
+        document.querySelector('#skills');
+
+
+    function animateSkills() {
+
+        const sectionTop =
+            skillsSection.getBoundingClientRect().top;
+
+        if (sectionTop < window.innerHeight - 100) {
+
+            skillBars.forEach(bar => {
+
+                bar.style.width =
+                    bar.getAttribute('data-width');
+
+            });
+
+        }
+
+    }
+
+    window.addEventListener(
+        'scroll',
+        animateSkills
+    );
+
+
+    /* =========================
+       PROJECT IMAGE SLIDER
+    ========================= */
+
+    function moveSlide(button, direction) {
+        const container = button.closest('.project-image');
+        const track = container.querySelector('.slider-track');
+        const images = track.querySelectorAll('img');
+        const totalSlides = images.length;
+
+        let currentIndex = parseInt(track.dataset.index || '0');
+        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        track.dataset.index = currentIndex;
+    }
+
+</script>
+
+
+</body>
+</html>
